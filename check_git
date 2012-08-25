@@ -28,14 +28,9 @@
 # and it will grow, of course.
 #PATH=""
 
-ECHO=echo
-[ -x /bin/echo ] && ECHO=/bin/echo
-
-PROGNAME=check_git
-[ -x /usr/bin/basename ] && PROGNAME=`/usr/bin/basename $0`
-
-PROGPATH=.
-[ -x /usr/bin/sed ] && PROGPATH=`$ECHO $0 | sed -e 's,[\\/][^\\/][^\\/]*$,,'`
+ECHO=/bin/echo
+PROGNAME=`/usr/bin/basename $0`
+PROGPATH=`$ECHO $0 | sed -e 's,[\\/][^\\/][^\\/]*$,,'`
 
 . $PROGPATH/utils.sh
 REVISION="0.1"
